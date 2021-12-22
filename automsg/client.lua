@@ -5,9 +5,9 @@ m.prefix = '^4[A1PHA SYSTEM BESKED] ' -- Skift dit prefix her
 m.suffix = ''
 m.messages = {
 	'^0Velkommen til ^0A1pha^4Scripts ^0Nyd dit ophold',
-    '^0Vores Discord er: ^4discord.gg/42HbvqGfnn',
+    '^0Vores Discord er: ^4discord.gg/fJekXq5jUP',
     '^0Brug din ^4sunde fornuft ^0og Gutter Lav nu noget godt ^4Rp^0 :)',
-    '^0Tryk ^4[F1] ^0for at åbne mobil ^4[F3] ^0for emote menu.',
+    '^0Tryk ^4[F1] ^0for at åbne mobil ^4[K] ^0for admin menu.',
     '^0Ingen ^4PowerGaming^0, ^4RDM^0, ^4VDM ^0eller ^4MetaGaming ^0det vil der straffes ^4hårdt på.',
     '^0Her er vores github github.com/^4Alpha^0The^4Dev',
     '^0Husk lige at joine Discorden via ^4/Discord!'
@@ -71,7 +71,7 @@ end, false)
 
 Citizen.CreateThread(function() TriggerEvent('chat:addSuggestion', '/discord', 'Viser discord link.') end)
 RegisterCommand("discord", function(source, args, rawCommandString)
-    TriggerEvent('chatMessage', "^4[A1PHA SCRIPTS]", { 255, 0, 62 }, "Join da lige ^4A1pha ^0Scripts lige her --> https://discord.gg/^442HbvqGfnn")
+    TriggerEvent('chatMessage', "^4[A1PHA SCRIPTS]", { 255, 0, 62 }, "Join da lige ^4A1pha ^0Scripts lige her --> discord.gg/fJekXq5jUP")
 end, false)
 
 --------------------------------------------------------------------------
