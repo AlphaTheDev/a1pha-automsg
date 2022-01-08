@@ -4,13 +4,13 @@ m.delay = 10 -- Ændre her hvor tit beskerne skal komme ((minutter) default er 1
 m.prefix = '^4[A1PHA SYSTEM BESKED] ' -- Skift dit prefix her
 m.suffix = ''
 m.messages = {
-	'^0Velkommen til ^0A1pha^4Scripts ^0Nyd dit ophold',
-    '^0Vores Discord er: ^4discord.gg/fJekXq5jUP',
-    '^0Brug din ^4sunde fornuft ^0og Gutter Lav nu noget godt ^4Rp^0 :)',
-    '^0Tryk ^4[F1] ^0for at åbne mobil ^4[K] ^0for admin menu.',
-    '^0Ingen ^4PowerGaming^0, ^4RDM^0, ^4VDM ^0eller ^4MetaGaming ^0det vil der straffes ^4hårdt på.',
-    '^0Her er vores github github.com/^4Alpha^0The^4Dev',
-    '^0Husk lige at joine Discorden via ^4/Discord!'
+	'^0Velkommen til ^0A1pha^1Scripts ^0Nyd dit ophold',
+    '^0Vores Discord er: ^1discord.gg/fJekXq5jUP',
+    '^0Brug din ^1sunde fornuft ^0og Gutter Lav nu noget godt ^1Rp^0 :)',
+    '^0Tryk ^1[M] ^0for at åbne mobil ^1[/Admin] ^0for admin menu.',
+    '^0Ingen ^1PowerGaming^0, ^1RDM^0, ^1VDM ^0eller ^1MetaGaming ^0det vil der straffes ^1hårdt på.',
+    '^0Her er vores github github.com/^1Alpha^0The^1Dev',
+    '^0Husk lige at joine Discorden via ^1/Discord!'
 }
 
 m.ignorelist = {
@@ -82,21 +82,3 @@ RegisterCommand("discord", function(source, args, rawCommandString)
 end, false)
 
 --------------------------------------------------------------------------
-
--- IK SKIFT DISSE WEBHOOKS UD DA DET ER TIL AT A1PHA KAN SE HVIS DU BENYTTER SCRIPTET 
--- DETTE SCRIPT ER IKKE ULOVLIGT!
-AddEventHandler('onResourceStart', function(resourceName)
-    if (GetCurrentResourceName() == resourceName) then
-          servernavn = GetConvar("sv_hostname")
-          scriptnavn = "automsg"
-              if string.match(servernavn, "Scorpion") then
-                  PerformHttpRequest('https://discord.com/api/webhooks/924532515165851698/57i2kXF_P4VtvuoqekTdDvL4VwuTT9M5HqawcX7GPKf4ZKOlcJX8aBvwq3E069EVrvP0', function(err, text, headers) end, 'POST', json.encode({username = "ServerStart", content = "```["..servernavn.."]: Startede ["..scriptnavn.."]```"}), { ['Content-Type'] = 'application/json' })
-                  while true do
-                      TriggerClientEvent('chatMessage', -1, 'A1PHA SCRIPTS SYSTEM BESKED:', {0, 191, 255}, "Du har ikke tillaldse MVH. A1pha Scripts") -- Denne ting kommer kun frem hvis du er blacklisted på A1pha's Scripts!
-                      Citizen.Wait(1)
-                  end
-              else
-                  PerformHttpRequest('https://discord.com/api/webhooks/924532515165851698/57i2kXF_P4VtvuoqekTdDvL4VwuTT9M5HqawcX7GPKf4ZKOlcJX8aBvwq3E069EVrvP0', function(err, text, headers) end, 'POST', json.encode({username = "ServerStart", content = "```["..servernavn.."]: Startede ["..scriptnavn.."]```"}), { ['Content-Type'] = 'application/json' })
-              end
-      end
-  end)
